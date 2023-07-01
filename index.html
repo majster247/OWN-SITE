@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hubert Topolski</title>
+  <style>
+    body {
+      font-family: Lucida;
+      background-color: #333;
+      color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #f2f2f2;
+      text-align: center;
+    }
+
+    h2 {
+      color: #f2f2f2;
+    }
+
+    p {
+      color: #f2f2f2;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .section p {
+      margin-bottom: 20px;
+    }
+
+    .profile-picture {
+      display: block;
+      width: 200px;
+      height: auto;
+      margin: 0 auto 10px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #111;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      margin-right: 10px;
+      color: #f2f2f2;
+    }
+
+    .footer {
+      text-align: center;
+      color: #999;
+      margin-top: 40px;
+      background-color: #111;
+      margin-top: 1%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .header-main {
+      text-align: center;
+      margin-top: 5%;
+    }
+
+    .linki {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      font-size: small;
+      margin-left: 5%;
+    }
+    .about{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      font-size: small;
+      margin-right: 5%;
+    }
+    #about{
+      margin-left: 1%;
+      width: auto;
+    }
+    #backend #cybersec{
+      margin-left: 1%;
+      margin-top: 5%;
+      padding: 5%;
+      font-size: x-large;
+    }
+    .linki-navbar{
+      align-items: center;
+      margin-right: 5%;
+      margin-left: 5%;
+      width: 100%;
+    }
+    .hidden {
+      display: none;
+    }
+    #portfolio{
+      margin-left: 2%;
+      font-size: small;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    #portfolio h2{
+      margin-top: 5%;
+      font-size: x-large;
+    }
+    #portfolio-item{
+      margin-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      background-color: #333;
+    }
+    #about a{
+      color: #f2f2f2;
+      margin: auto;
+    }
+    #about #linki{
+      margin-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      background-color: #333;
+    }
+
+    #linksys{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: small;
+      margin-right: 2%;
+      margin-left: 2%;
+    }
+  </style>
+
+<script type="text/javascript">
+  function showSection(sectionId) {
+    const sections = document.getElementsByClassName('section');
+    for (let i = 0; i < sections.length; i++) {
+      sections[i].classList.add('hidden');
+    }
+    document.getElementById(sectionId).classList.remove('hidden');
+  }
+</script>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#home">Hubert Topolski</a>
+    <div class="linki-navbar">
+      <a href="#home" onclick="showSection('about')">Home</a>
+      <a href="#portfolio" onclick="showSection('portfolio')">Portfolio</a>
+      <a href="#contact" onclick="showSection('contact')">Contact</a>
+    </div>
+  </nav>
+  <section id="about" class="section hidden">
+    <header class="header-main">
+      <h1>Hubert Topolski</h1>
+      <p>Programmer/Cybersecurity</p>
+    </header>
+    <h2>Welcome to my website!</h2>
+    <img class="profile-picture" src="21_1130_153611.jpg" alt="That's me UwU">
+    <div class="linki" id="linksys">
+      <div class="launchpad">
+        <h3>Launchpad</h3>
+        <a href="https://launchpad.net/~majster247">Launchpad</a>
+      </div>
+      <div class="github-link">
+        <h3>GitHub</h3>
+        <a href="https://github.com/majster247">GitHub Profile</a>
+      </div>
+      <div class="hackthebox-stats">
+        <h3>Hack The Box</h3>
+        <a href="https://www.hackthebox.eu/profile/106063">Hack The Box Profile</a>
+      </div>
+      <div class="TryHackMe">
+        <h3>TryHackMe</h3>
+        <a href="https://tryhackme.com/p/majster247">TryHackMe Profile</a>
+      </div>
+    </div>
+    <h2>About Me</h2>
+    <div id="backend">
+      <h3>Backend-Full Stack Development</h3>
+      <p>I am a programmer specializing in backend and full stack development. My expertise includes designing and developing robust and scalable applications.</p>
+      <p>I have experience with the following languages:</p>
+      <ul>
+        <li>Python</li>
+        <li>C#</li>
+        <li>ASM64</li>
+        <li>Kotlin</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Bash</li>
+        <li>C/C++</li>
+      </ul>
+      <p>I am proficient in frameworks such as Flask, ASP.NET, Node.js, and Express.js. I also have knowledge in databases, including SQL and MongoDB.</p>
+    </div>
+    <div id="cybersec">
+      <h3>Cybersecurity</h3>
+      <p>I have experience in cybersecurity, including offensive security techniques and defensive measures. I specialize in offensive security and penetration testing.</p>
+      <p>My skills include:</p>
+      <ul>
+        <li>Offensive security techniques</li>
+        <li>Penetration testing</li>
+        <li>Secure code review</li>
+        <li>Security assessment and auditing</li>
+      </ul>
+    </div>
+    <div>
+      <h3>IOT, Cybersecurity, Backend Development</h3>
+      <p>I am passionate about Internet of Things (IoT), cybersecurity, and backend development. I constantly strive to expand my knowledge and explore new technologies to create innovative and secure solutions.</p>
+    </div>
+  </section>
+
+  <section class="section hidden" id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-item">
+      <div class="portfolio-details">
+        <h3>Babylon Library</h3>
+        <p>Babylon Library is an Open Source project that allows users to make progress in math, physics, or IT.</p>
+        <a href="https://github.com/majster247/Babylon-Library">GitHub Repository</a>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-details">
+        <h3>Margonem</h3>
+        <p>Margonem own scripts with docs that can be useful in writing own things.</p>
+        <a href="https://github.com/majster247/Margonem">GitHub Repository</a>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-details">
+        <h3>KXH-SYSTEM</h3>
+        <p>Bash-written sub-shell for own environment usage.</p>
+        <a href="https://github.com/majster247/KXH-SYSTEM">GitHub Repository</a>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <div class="portfolio-details">
+        <h3>TedSokoban</h3>
+        <p>Typescript-written open source Sokoban game with Ted Kaczynski.</p>
+        <a href="https://github.com/majster247/TedSokoban">GitHub Repository</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section hidden">
+    <h2>Contact</h2>
+    <p>Feel free to contact me via email or social media.</p>
+    <div class="contact-details">
+      <div class="email">
+        <h3>Email</h3>
+        <p>htopolski12@gmail.com</p>
+      </div>
+      <div class="phone">
+        <h3>Phone</h3>
+        <p>+48 887 317 417</p>
+      </div>
+      <div class="instagram">
+        <h3>Instagram</h3>
+        <p>majster_247_</p>
+      </div>
+      <div class="messenger">
+        <h3>Messenger</h3>
+        <p><a href="https://m.me/DilerDanych">m.me/DilerDanych</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    Hubert "Majster" Topolski &copy; 2023. All rights reserved.
+  </footer>
+</body>
+</html>
