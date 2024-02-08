@@ -1,0 +1,57 @@
+/* Portfolio.css */
+.portfolio-container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+
+h2 {
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+}
+
+.portfolio-item {
+  background-color: #444;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item h3 {
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.portfolio-item p {
+  color: #eee;
+  line-height: 1.6;
+}
+
+.portfolio-item a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.portfolio-item a:hover {
+  text-decoration: underline;
+}
+
+.portfolio-item img {
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add more styles as needed */
