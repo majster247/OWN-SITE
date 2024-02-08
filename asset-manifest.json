@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b712766e.css",
-    "main.js": "/static/js/main.a2251d4e.js",
-    "static/media/cert2.png": "/static/media/cert2.b52a3e7bc96c31b8ccda.png",
-    "static/media/cert3.png": "/static/media/cert3.760d87cf95e6079d62dd.png",
-    "static/media/cert1.png": "/static/media/cert1.fcddde0741780c29ecfd.png",
-    "static/media/me.jpg": "/static/media/me.0d168aaa8eb0f2964f43.jpg",
-    "index.html": "/index.html",
-    "main.b712766e.css.map": "/static/css/main.b712766e.css.map",
-    "main.a2251d4e.js.map": "/static/js/main.a2251d4e.js.map"
+    "main.css": "/engimasec.studio/static/css/main.b712766e.css",
+    "main.js": "/engimasec.studio/static/js/main.408bbef7.js",
+    "static/media/cert2.png": "/engimasec.studio/static/media/cert2.b52a3e7bc96c31b8ccda.png",
+    "static/media/cert3.png": "/engimasec.studio/static/media/cert3.760d87cf95e6079d62dd.png",
+    "static/media/cert1.png": "/engimasec.studio/static/media/cert1.fcddde0741780c29ecfd.png",
+    "static/media/me.jpg": "/engimasec.studio/static/media/me.0d168aaa8eb0f2964f43.jpg",
+    "index.html": "/engimasec.studio/index.html",
+    "main.b712766e.css.map": "/engimasec.studio/static/css/main.b712766e.css.map",
+    "main.408bbef7.js.map": "/engimasec.studio/static/js/main.408bbef7.js.map"
   },
   "entrypoints": [
     "static/css/main.b712766e.css",
-    "static/js/main.a2251d4e.js"
+    "static/js/main.408bbef7.js"
   ]
 }
