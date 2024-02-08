@@ -1,86 +1,101 @@
 /* Home.css */
 .home-container {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 3%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+
+.header-main {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-picture {
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 300px; /* Maximum width for larger screens */
+  height: auto;
+  border-radius: 50%;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.linki {
+  flex-direction: column; /* Stack items vertically on small screens */
+  align-items: center;
+  background-color: #444;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.linki a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px; /* Add some space between links on small screens */
+}
+
+.linki a:hover {
+  text-decoration: underline;
+}
+
+.about-section {
+  margin-top: 40px;
+}
+
+#backend,
+#cybersec {
+  background-color: #555;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+#backend ul,
+#cybersec ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+#backend p,
+#cybersec p {
+  line-height: 1.6;
+}
+
+#backend h3,
+#cybersec h3,
+.about-section h2 {
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.about-section div {
+  background-color: #666;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+  .home-container {
+      max-width: 100%; /* Adjusted for full width on small screens */
+      font-size: small;
   }
-  
-  .header-main {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .welcome-section {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
   .profile-picture {
-    width: 300px;
-    height: auto;
-    border-radius: 50%;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 100%; /* Adjusted for smaller screens */
   }
-  
+
   .linki {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #444;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
+      text-align: center;
   }
-  
-  .linki a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .linki a:hover {
-    text-decoration: underline;
-  }
-  
-  .about-section {
-    margin-top: 40px;
-  }
-  
-  #backend,
-  #cybersec {
-    background-color: #555;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-  }
-  
-  #backend ul,
-  #cybersec ul {
-    list-style-type: square;
-    padding-left: 20px;
-  }
-  
-  #backend p,
-  #cybersec p {
-    line-height: 1.6;
-  }
-  
-  #backend h3,
-  #cybersec h3,
-  .about-section h2 {
-    color: #fff;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .about-section div {
-    background-color: #666;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-  }
-  
+}

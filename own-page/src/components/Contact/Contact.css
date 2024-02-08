@@ -1,6 +1,6 @@
 /* Contact.css */
 .contact-container {
-  max-width: 50%;
+  max-width: 800px; /* Adjusted max-width for better mobile responsiveness */
   margin: 0 auto;
   margin-top: 3%;
 }
@@ -13,9 +13,9 @@ h2 {
 
 .contact-details {
   display: flex;
+  flex-direction: column; /* Stack items vertically on small screens */
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
   background-color: #333;
   padding: 20px;
   margin-top: 20px;
@@ -24,8 +24,8 @@ h2 {
 }
 
 .contact-item {
-  flex: 1;
-  margin: 10px;
+  width: 100%; /* Full width for smaller screens */
+  margin: 10px 0; /* Adjusted margin for better spacing on small screens */
   padding: 15px;
   background-color: #444;
   border-radius: 8px;
@@ -53,4 +53,14 @@ h2 {
   text-decoration: underline;
 }
 
-/* Add more styles as needed */
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+  .contact-container {
+    max-width: 100%; /* Adjusted for full width on small screens */
+    font-size: small;
+  }
+
+  .contact-details {
+    padding: 15px; /* Adjusted padding for better spacing on small screens */
+  }
+}

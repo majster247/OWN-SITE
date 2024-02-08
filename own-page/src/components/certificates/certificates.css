@@ -1,23 +1,24 @@
 /* certificates.css */
 .cert {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .cert img {
-    width: 100px; /* Adjust the size as per your design */
-    height: auto;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: transform 0.3s;
-  }
-  
-  .cert img:hover {
-    transform: scale(1.1);
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert img {
+  width: 100%; /* Adjusted to fill the container on smaller screens */
+  max-width: 150px; /* Specify a maximum width to avoid very large images */
+  height: auto;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.cert img:hover {
+  transform: scale(1.1);
+}
+
 .modal {
   display: flex;
   align-items: center;
@@ -32,6 +33,8 @@
 
 .modal-content {
   position: relative;
+  width: 90%; /* Adjusted for better visibility on small screens */
+  max-width: 400px; /* Specify a maximum width to avoid very large modals */
 }
 
 .modal img {
