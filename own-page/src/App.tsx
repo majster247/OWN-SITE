@@ -11,7 +11,7 @@ import './App.css';
 const MainApp: React.FC = () => {
   return (
       <div>
-        <header>
+        <header className='header'>
           <h1>Hubert "majster247" Topolski</h1>
         </header>
 

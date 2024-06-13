@@ -1,63 +1,111 @@
-/* Portfolio.css */
+/* General styles */
 .portfolio-container {
-  max-width: 90%; /* Adjusted for better responsiveness */
-  margin: 0 auto;
-  margin-bottom: 3%;
+  display: flex;
+  height: 100vh; /* Make the container take up the full height of the viewport */
+  padding-bottom: 5%;
+  border: 1px solid #ddd;
 }
 
-h2 {
-  color: whitesmoke;
-  text-align: center;
-  margin-top: 20px;
+.left-panel {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  position: sticky; /* Make the left panel sticky */
+  top: 0;
+  height: 100vh; /* Ensure the left panel takes up the full viewport height */
+  overflow-y: auto; /* Ensure the left panel can scroll if content overflows */
+}
+
+.right-panel {
+  width: 70%;
+  padding: 20px;
+  overflow-y: auto; /* Ensure the right panel can scroll if content overflows */
 }
 
 .portfolio-list {
   list-style: none;
   padding: 0;
+  width: 100%; /* Make sure the list takes full width */
 }
 
 .portfolio-item {
-  background-color: #444;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item h3 {
-  color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-.portfolio-item p {
-  color: #eee;
-  line-height: 1.6;
+  font-size: 0.7rem; /* Use relative units for font size */
+  margin-bottom: 20px;
+  border: 1px solid white;
+  padding: 10px;
 }
 
 .portfolio-item a {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: bold;
   display: block;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
-.portfolio-item a:hover {
-  text-decoration: underline;
+.portfolio-item button {
+  background-color: #022; /* Dark blue */
+  border: 1px solid black;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem; /* Use relative units for font size */
+  cursor: pointer; /* Add cursor pointer for better UX */
 }
 
-.portfolio-item img {
-  width: 100%; /* Adjusted for better responsiveness */
-  height: auto;
-  margin-top: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.message {
+  text-align: center;
+  font-size: 1.5rem; /* Use relative units for font size */
 }
-@media (max-width: 600px) {
-  .portfolio-container {
-    max-width: 100%; /* Adjusted for full width on small screens */
-    font-size: small;
-  }
+
+.readme-content {
+  width: 100%;
+  overflow: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.readme-content img {
+  max-width: 50%; /* Ensure images scale properly */
+  height: auto; /* Maintain aspect ratio of images */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#portfolio-header {
+  text-align: center;
+  width: 100%;
+  height: 10%;
+  background-color: #fff; /* White background for better readability */
+  padding: 20px;
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+.left-panel::-webkit-scrollbar,
+.right-panel::-webkit-scrollbar {
+  width: 1px; /* Width of the vertical scrollbar */
+}
+
+.left-panel::-webkit-scrollbar-thumb,
+.right-panel::-webkit-scrollbar-thumb {
+  background-color: #000; /* Black scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.left-panel::-webkit-scrollbar-track,
+.right-panel::-webkit-scrollbar-track {
+  background-color: #000; /* Black background color of the scrollbar track */
+}
+
+/* Custom scrollbar styles for Firefox */
+.left-panel,
+.right-panel {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #000 #000; /* Black thumb and black background */
+}
+

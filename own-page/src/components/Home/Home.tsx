@@ -1,7 +1,6 @@
 // Home.tsx
 import React from "react";
 import "./Home.css"; // Import your Home component CSS file
-import MeImage from "./me.jpg"; // Import your image
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +12,7 @@ const Home: React.FC = () => {
 
       <section className="welcome-section">
         <h2>Welcome to my website!</h2>
-        <img className="profile-picture" src={MeImage} alt="That's me UwU" />
+        <img className="profile-picture" src="https://avatars.githubusercontent.com/u/74077594?v=4" alt="That's me UwU" />
       </section>
 
       <section className="linki" id="linksys">

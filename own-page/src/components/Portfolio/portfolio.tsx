@@ -1,47 +1,86 @@
-// Portfolio.tsx
-import React from "react";
-import "./Portfolio.css"; // Import your Portfolio component CSS file
+import React, { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import "./Portfolio.css";
+
+const projects = [
+  {
+    name: "Babylon Library",
+    description: "Babylon Library is an Open Source project that allows users to make progress in math, physics, or IT.",
+    repo: "https://github.com/majster247/Babylon-Library",
+    readme: "https://raw.githubusercontent.com/majster247/Babylon-Library/main/README.md",
+  },
+  {
+    name: "SoftSimulate",
+    description: "Simple code for simulating soft bodies, created for educational purposes. The code simulates a pressure model using the Verlet integration method",
+    repo: "https://github.com/majster247/SoftSimulate",
+    website: "https://majster247.github.io/SoftSimulate/",
+    readme: "https://raw.githubusercontent.com/majster247/SoftSimulate/main/README.md",
+  },
+  {
+    name: "AMS",
+    description: "AMS OS is a simple and minimalistic self-written OS for own research purposes.",
+    repo: "https://github.com/majster247/AMS",
+    website: "https://ams-os.enigmasec.studio",
+    readme: "https://raw.githubusercontent.com/majster247/AMS/main/README.md",
+  },
+  {
+    name: "TedSokoban",
+    description: "Typescript-written open source Sokoban game with Ted Kaczynski.",
+    repo: "https://github.com/majster247/TedSokoban",
+    readme: "https://raw.githubusercontent.com/majster247/TedSokoban/master/README.md",
+  },
+  {
+    name: "Colorscheme",
+    description: "Colorscheme is a simple bash script that allows the user to print a table of colors in the terminal",
+    repo: "https://github.com/majster247/colorscheme",
+    snapcraft: "https://snapcraft.io/colorscheme",
+    readme: "https://raw.githubusercontent.com/majster247/colorscheme/main/README.md",
+  },
+];
 
 const Portfolio: React.FC = () => {
+  const [selectedProject, setSelectedProject] = useState<null | typeof projects[0]>(null);
+  const [readme, setReadme] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (selectedProject) {
+      fetch(selectedProject.readme)
+        .then((response) => response.text())
+        .then((data) => setReadme(data))
+        .catch((error) => console.error('Error fetching README:', error));
+    }
+  }, [selectedProject]);
+
   return (
-    <div className="portfolio-container">
-      <h2>Portfolio</h2>
-
-      <ul className="portfolio-list">
-        <li className="portfolio-item">
-          <h3>Babylon Library</h3>
-          <p>Babylon Library is an Open Source project that allows users to make progress in math, physics, or IT.</p>
-          <a href="https://github.com/majster247/Babylon-Library">GitHub Repository</a>
-        </li>
-
-        <li className="portfolio-item">
-          <h3>SoftSimulate</h3>
-          <p>Simple code for simulating soft bodies, created for educational purposes. The code simulates a pressure model using the Verlet integration method</p>
-          <a href="https://majster247.github.io/SoftSimulate/">Website</a>
-          <a href="https://github.com/majster247/SoftSimulate">GitHub Repository</a>
-        </li>
-
-        <li className="portfolio-item">
-          <h3>AMS</h3>
-          <p>AMS OS is a simple and minimalistic self-written OS for own research purposes.</p>
-          <a href="https://github.com/majster247/AMS">GitHub Repository</a>
-          <a href="https://ams-os.enigmasec.studio">Website</a>
-        </li>
-
-        <li className="portfolio-item">
-          <h3>TedSokoban</h3>
-          <p>Typescript-written open source Sokoban game with Ted Kaczynski.</p>
-          <a href="https://github.com/majster247/TedSokoban">GitHub Repository</a>
-        </li>
-
-        <li className="portfolio-item">
-          <h3>Colorscheme</h3>
-          <p>Colorscheme is a simple bash script that allows the user to print a table of colors in the terminal</p>
-          <img src="https://github.com/majster247/colorscheme/raw/main/docs/example.png" width="25%" height="25%" alt="Colorscheme Example" />
-          <a href="https://github.com/majster247/colorscheme">GitHub Repository</a>
-          <a href="https://snapcraft.io/colorscheme">Snapcraft mirror</a>
-        </li>
-      </ul>
+    <div>
+      <div className="portfolio-header">
+        <h2 id="siemka">Portfolio</h2>
+      </div>
+      <div className="portfolio-container">
+        <div className="left-panel">
+          <ul className="portfolio-list">
+            {projects.map((project, index) => (
+              <li key={index} className="portfolio-item">
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+                {project.website && <a href={project.website}>Website</a>}
+                <a href={project.repo}>GitHub Repository</a>
+                {project.snapcraft && <a href={project.snapcraft}>Snapcraft mirror</a>}
+                <button onClick={() => setSelectedProject(project)}>View Details</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="right-panel">
+          {!selectedProject ? (
+            <div className="message">Click on a project to see details</div>
+          ) : (
+            <div className="readme-content">
+              <ReactMarkdown>{readme || "Loading..."}</ReactMarkdown>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
