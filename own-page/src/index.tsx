@@ -14,7 +14,6 @@ const router = createHashRouter([
     element: <App />,
   }
 ]);
-
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <script type="text/javascript" id="MathJax-script" async

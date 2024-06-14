@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { InlineMath, BlockMath } from "react-katex";
-import RemarkMathPlugin from "remark-math";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css"; // Optional, for KaTeX styles
 import "./Portfolio.css";
-
-// Define the type for the components prop of ReactMarkdown
-interface Renderers {
-  [key: string]: React.ComponentType<{ value: string }>;
-}
 
 const projects = [
   {
@@ -71,12 +66,6 @@ const Portfolio: React.FC = () => {
     }
   }, [selectedProject]);
 
-  // Define the renderers for ReactMarkdown
-  const renderers: Renderers = {
-    inlineMath: ({ value }: { value: string }) => <InlineMath math={value} />,
-    math: ({ value }: { value: string }) => <BlockMath math={value} />,
-  };
-
   return (
     <div>
       <div className="portfolio-header">
@@ -108,8 +97,8 @@ const Portfolio: React.FC = () => {
             <div className="readme-content">
               <ReactMarkdown
                 children={readme || "Loading..."}
-                remarkPlugins={[RemarkMathPlugin]}
-                components={renderers} // Pass the renderers object here
+                remarkPlugins={[remarkMath]}
+                rehypePlugins={[rehypeKatex]} // Add rehype-katex plugin here
               />
             </div>
           )}

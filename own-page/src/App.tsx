@@ -17,9 +17,9 @@ const MainApp: React.FC = () => {
 
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/cert">Certificates</Link>
           <Link to="/portfolio">Portfolio</Link>
+          <Link to="/cert">Certificates</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
 
         <main>

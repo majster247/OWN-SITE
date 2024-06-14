@@ -1,101 +1,150 @@
-/* Home.css */
 .home-container {
-  max-width: 800px;
+  display: flex;
+  max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: 3%;
-}
-
-.header-main {
-  background-color: #333;
-  color: #fff;
   padding: 20px;
-  text-align: center;
+  height: 100%; /* Ensure container fills height */
 }
 
-.welcome-section {
-  text-align: center;
-  margin-top: 20px;
+.left-section {
+  flex: 1;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill height */
+}
+
+.right-section {
+  flex: 3;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 10px; /* Adjusted margin for better spacing */
+  height: 100%; /* Fill height */
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+
 }
 
 .profile-picture {
-  width: 100%; /* Adjusted for responsiveness */
-  max-width: 300px; /* Maximum width for larger screens */
-  height: auto;
+  width: 60%; /* Adjust size of profile picture */
+  height: 100%;
   border-radius: 50%;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 4px solid #333; /* Border around profile picture */
 }
 
-.linki {
-  flex-direction: column; /* Stack items vertically on small screens */
-  align-items: center;
-  background-color: #444;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.linki a {
-  color: #fff;
+.profile-details {
+  margin-left: 20px;
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-media a {
+  color: white;
   text-decoration: none;
-  font-weight: bold;
-  margin-bottom: 10px; /* Add some space between links on small screens */
+  padding: 5px 10px;
+  background-color: #333;
+  border-radius: 4px;
 }
 
-.linki a:hover {
-  text-decoration: underline;
+.social-media a:hover {
+  background-color: #bbb;
 }
 
-.about-section {
-  margin-top: 40px;
-}
-
-#backend,
-#cybersec {
-  background-color: #555;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
-#backend ul,
-#cybersec ul {
-  list-style-type: square;
-  padding-left: 20px;
-}
-
-#backend p,
-#cybersec p {
-  line-height: 1.6;
-}
-
-#backend h3,
-#cybersec h3,
-.about-section h2 {
+.simulation-section {
   color: #fff;
-  border-bottom: 1px solid #ddd;
+  border-radius: 8px;
+  height: 50vh; /* Set height to 100% of its container */
+  overflow: hidden; /* Ensure overflow is hidden */
+}
+
+.simulation-section canvas {
+  width: 100%;
+  height: 100%; /* Make canvas fill the entire height of the simulation section */
+  display: block; /* Ensure canvas fills its container */
+}
+
+.about-section h2 {
+  border-bottom: 2px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-.about-section div {
-  background-color: #666;
-  padding: 20px;
+.about-item h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.skills-section {
   margin-top: 20px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.skill {
+  background-color: #333;
+  padding: 10px;
   border-radius: 8px;
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 600px) {
+.skill h4 {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 900px) {
   .home-container {
-      max-width: 100%; /* Adjusted for full width on small screens */
-      font-size: small;
-  }
-  .profile-picture {
-      max-width: 100%; /* Adjusted for smaller screens */
+    flex-direction: column;
   }
 
-  .linki {
-      text-align: center;
+  .right-section {
+    margin-top: 20px;
+    margin-left: 0; /* Adjust for smaller screens */
+    flex: 1; /* Full width on smaller screens */
+  }
+
+  .left-section,
+  .right-section {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-details {
+    text-align: center;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .simulation-section {
+    margin-top: 20px;
   }
 }
