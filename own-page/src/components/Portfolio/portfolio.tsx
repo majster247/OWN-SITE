@@ -7,12 +7,13 @@ import "./Portfolio.css";
 
 const projects = [
   {
-    name: "Babylon Library",
+    name: "AMS",
     description:
-      "Babylon Library is an Open Source project that allows users to make progress in math, physics, or IT.",
-    repo: "https://github.com/majster247/Babylon-Library",
+      "AMS OS is a simple and minimalistic self-written OS for own research purposes.",
+    repo: "https://github.com/majster247/AMS",
+    website: "https://ams-os.enigmasec.studio",
     readme:
-      "https://raw.githubusercontent.com/majster247/Babylon-Library/main/README.md",
+      "https://raw.githubusercontent.com/majster247/AMS/main/README.md",
   },
   {
     name: "SoftSimulate",
@@ -24,14 +25,26 @@ const projects = [
       "https://raw.githubusercontent.com/majster247/SoftSimulate/main/README.md",
   },
   {
-    name: "AMS",
-    description:
-      "AMS OS is a simple and minimalistic self-written OS for own research purposes.",
-    repo: "https://github.com/majster247/AMS",
-    website: "https://ams-os.enigmasec.studio",
-    readme:
-      "https://raw.githubusercontent.com/majster247/AMS/main/README.md",
+    name: "SpacePlanner",
+    description:"SpacePlanner to narzędzie służące do generowania map miejskich o różnych cechach takich jak drogi, lasy, budynki, infrastruktura, chodniki i wiele więcej. Projekt ten umożliwia tworzenie wizualizacji pikselowej oraz potencjalnie w przyszłości 3D map miast w oparciu o różnorodne parametry wejściowe.",
+    repo: "https://github.com/majster247/SpacePlanner/",
+    readme: "https://raw.githubusercontent.com/majster247/SpacePlanner/main/README.md",
   },
+  {
+    name: "Minecraft-C",
+    description:"This project is an unofficial rewrite of the popular game Minecraft using C++. The aim is to understand and replicate the core mechanics of Minecraft, while leveraging the performance and control benefits of C++.",
+    repo: "https://github.com/majster247/Minecraft-C",
+    readme: "https://raw.githubusercontent.com/majster247/Minecraft-C/main/README.md",
+  },
+  {
+    name: "Babylon Library",
+    description:
+      "Babylon Library is an Open Source project that allows users to make progress in math, physics, or IT.",
+    repo: "https://github.com/majster247/Babylon-Library",
+    readme:
+      "https://raw.githubusercontent.com/majster247/Babylon-Library/main/README.md",
+  },
+  
   {
     name: "TedSokoban",
     description:

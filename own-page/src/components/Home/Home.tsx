@@ -22,17 +22,17 @@ const Home: React.FC = () => {
     };
 
     const createParticle = () => {
-      const size = Math.random() * 2;
+      const size = Math.random() * 2+1;
       const x = Math.random() * canvas.width;
       const y = -size;
-      const speedX = Math.random() * 3 - 2; // Random horizontal speed
-      const speedY = Math.random() * 3 + 1; // Vertical speed
+      const speedX = Math.random() * 2 - 1; // Random horizontal speed
+      const speedY = Math.random() * 2 + 1; // Vertical speed
       particles.push({ x, y, speedX, speedY, size });
     };
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#c2b280"; // Sand color
+      ctx.fillStyle = "	#55555AA"; // Sand color
 
       particles.forEach((particle, index) => {
         ctx.beginPath();
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
     };
 
     const updateParticles = () => {
-      if (Math.random() > 0.85) {
+      if (Math.random() > 0.10) {
         createParticle();
       }
 

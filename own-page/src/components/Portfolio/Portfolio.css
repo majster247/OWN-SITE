@@ -50,15 +50,17 @@
 
 .portfolio-item button {
   background-color: #444; /* Dark blue */
-  border: 1px solid #888;
+  border: 0.5% solid #888;
   color: white;
-  padding: 5px 10px;
-  margin-top: 5px;
+  padding: 1% 2%;
+  margin-top: 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1rem; /* Use relative units for font size */
+  font-size: 120%; /* Use relative units for font size */
   cursor: pointer; /* Add cursor pointer for better UX */
+  height: 100%;
+  width: 100%;
 }
 
 .message {
