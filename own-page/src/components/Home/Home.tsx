@@ -1,10 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Home.css';
+import serviceNames from './serviceNames'; // Import the service names
 
 const Home: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [dots, setDots] = useState(''); // State for dots animation
-  const intervalRef = useRef<NodeJS.Timeout | null>(null); // Ref for interval ID
+  const [selectedGif, setSelectedGif] = useState(''); // State for random GIF
+  const [bootMessages, setBootMessages] = useState<string[]>([]); // State for boot messages
+  const maxVisibleProcesses = 17; // Maximum number of visible processes
+
+  // Generate boot processes with random wait times
+  const generateBootProcesses = () => {
+    return serviceNames.map((name, index) => ({
+      id: index, // Add an ID for unique key purposes
+      name: name,
+      wait: parseFloat((Math.random() * (1000 - 10) + 10).toFixed(2)), // Random wait time between 10ms and 1000ms
+    }));
+  };
+
+  const bootProcesses = generateBootProcesses();
 
   // Function to start the particles animation
   const startParticlesAnimation = () => {
@@ -22,7 +35,7 @@ const Home: React.FC = () => {
     };
 
     const createParticle = () => {
-      const size = Math.random() * 2+1;
+      const size = Math.random() * 2 + 1;
       const x = Math.random() * canvas.width;
       const y = -size;
       const speedX = Math.random() * 2 - 1; // Random horizontal speed
@@ -32,7 +45,7 @@ const Home: React.FC = () => {
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "	#55555AA"; // Sand color
+      ctx.fillStyle = "#55555AA"; // Sand color
 
       particles.forEach((particle, index) => {
         ctx.beginPath();
@@ -68,37 +81,61 @@ const Home: React.FC = () => {
     };
   };
 
-  useEffect(() => {
-    startParticlesAnimation(); // Start particles animation on mount
-  }, []);
+  const startBootAnimation = () => {
+    const updateMessages = (index: number) => {
+      if (index < bootProcesses.length) {
+        const process = bootProcesses[index];
+        const startingMessage = `[ ... ] Starting ${process.name}`;
 
-  // Function to start the loading animation
-  const startLoadingAnimation = () => {
-    intervalRef.current = setInterval(() => {
-      setDots(prevDots => prevDots.length < 5 ? prevDots + '.' : ''); // Add dots progressively
-    }, 500);
+      setTimeout(() => {
+        setBootMessages((prevMessages) => {
+          const updatedMessages = [...prevMessages, startingMessage];
+          return updatedMessages.length > maxVisibleProcesses 
+            ? updatedMessages.slice(1) 
+            : updatedMessages;
+        });}, 50); // Adjusted for speed
+
+        setTimeout(() => {
+          setBootMessages((prevMessages) => {
+            const updatedMessages = [...prevMessages];
+            updatedMessages[updatedMessages.length - 1] = `[ OK ] Starting ${process.name}`;
+            return updatedMessages;
+          });
+
+          setTimeout(() => {
+            updateMessages(index + 1);
+          }); 
+        }, 50);// Adjusted for speed
+      } else {
+        setTimeout(() => {
+          setBootMessages([]); // Clear messages after the last boot process
+          startBootAnimation(); // Restart animation
+        }, 1000);
+      }
+    };
+
+    setTimeout(() => {
+      updateMessages(0); // Start from the first service
+    });
   };
 
   useEffect(() => {
-    startLoadingAnimation(); // Start loading animation dots
+    const gifNames = ['1.gif', '2.gif', '3.gif', '4.gif', '5.gif', '6.gif'];
 
-    // Cleanup: Clear interval on unmount and restart animation after 3 seconds
-    const restartAnimation = () => {
-      clearInterval(intervalRef.current!);
-      setDots('');
-      setTimeout(() => {
-        startLoadingAnimation();
-      }, 500);
-    };
+    // Select a random GIF
+    const randomGif = gifNames[Math.floor(Math.random() * gifNames.length)];
 
-    // Stop loading animation after 3 seconds (adjust as needed)
-    setTimeout(() => {
-      restartAnimation();
-    }, 3000);
+    // Set the selected GIF path
+    const gifPath = `${process.env.PUBLIC_URL}/RPC/${randomGif}`;
+    setSelectedGif(gifPath);
+  }, []);
 
-    // Cleanup: Clear interval on unmount
+  useEffect(() => {
+    startParticlesAnimation(); // Start particles animation on mount
+    startBootAnimation(); // Start boot animation on mount
     return () => {
-      clearInterval(intervalRef.current!);
+      // Cleanup code
+      setBootMessages([]); // Clear messages
     };
   }, []);
 
@@ -113,29 +150,51 @@ const Home: React.FC = () => {
           />
           <div className="profile-details">
             <h2>Hubert Topolski</h2>
-            <p>Embedded C/C++ Programmer<br />Cybersecurity</p>
+            <p>Embedded C/C++<br />OS-Dev Enjoyer<br />Cybersecurity</p>
             <div className="social-media">
               <a href="https://launchpad.net/~majster247">Launchpad</a>
               <a href="https://github.com/majster247">GitHub</a>
               <a href="https://app.hackthebox.com/profile/964262">Hack The Box</a>
+              <a href="https://buycoffee.to/majster247">Buycoffee.to</a>
             </div>
           </div>
         </div>
 
         <div className="simulation-section">
-        <h3>There will be something mindblowing from my head{dots}</h3>
+          <h3>There will be something mindblowing from my head</h3>
           <canvas className="sand-canvas" ref={canvasRef}></canvas>
         </div>
       </section>
 
-      <section className="right-section">
+      <div className="right-section">
         <div className="about-section">
           <h2>About Me</h2>
-          <div className="about-item">
-            <h3>Technical Programmer</h3>
-            <p>
-              As a technical programmer specializing in Embedded C/C++ and Assembly x86-64 and ARM, I am passionate about designing and developing robust and efficient solutions. My expertise includes working with microcontrollers and embedded systems, ensuring optimal performance and reliability.
-            </p>
+          <div className="cool-stuff">
+            <div className="gif-section">
+              <img
+                src={selectedGif}
+                alt="Mindblowing animation"
+                className="mindblowing-gif"
+              />
+            </div>
+            <div className="boot-section">
+              <div className="boot-messages">
+                {bootMessages.map((message, index) => (
+                  <div key={`${index}-${message}`} className="boot-message">
+                    {/* Split the message into parts */}
+                    {message.includes('OK') ? (
+                      <>
+                        <span>{message.split('[ OK ]')[0]}</span>
+                        <span style={{ color: 'green' }}>[ OK ]</span>
+                        <span>{message.split('[ OK ]')[1]}</span>
+                      </>
+                    ) : (
+                      <span>{message}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="skills-section">
@@ -160,7 +219,7 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

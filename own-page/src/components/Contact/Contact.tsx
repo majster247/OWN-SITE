@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
                 <br></br>
                 All work is written from scratch to ensure originality and meet your
                 specifications, delivered as ready-to-submit code.<br></br>
-                Available for C, C++, and Python projects of all levels.<br></br>
+                Available for C,C++, and Python projects of all levels.<br></br>
                 <br></br>
                 <br></br>
                 Contact on Discord: <strong>majster247</strong> or by email if needed.
