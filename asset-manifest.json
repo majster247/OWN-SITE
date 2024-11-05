@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c6c3e835.css",
-    "main.js": "/static/js/main.57accc31.js",
+    "main.css": "/static/css/main.fda93229.css",
+    "main.js": "/static/js/main.6e6f8762.js",
     "static/media/cert2.png": "/static/media/cert2.b52a3e7bc96c31b8ccda.png",
     "static/media/cert3.png": "/static/media/cert3.760d87cf95e6079d62dd.png",
     "static/media/cert1.png": "/static/media/cert1.fcddde0741780c29ecfd.png",
@@ -66,11 +66,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
-    "main.c6c3e835.css.map": "/static/css/main.c6c3e835.css.map",
-    "main.57accc31.js.map": "/static/js/main.57accc31.js.map"
+    "main.fda93229.css.map": "/static/css/main.fda93229.css.map",
+    "main.6e6f8762.js.map": "/static/js/main.6e6f8762.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6c3e835.css",
-    "static/js/main.57accc31.js"
+    "static/css/main.fda93229.css",
+    "static/js/main.6e6f8762.js"
   ]
 }
