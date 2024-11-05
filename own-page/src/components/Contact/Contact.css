@@ -51,6 +51,14 @@ h2 {
 .contact-item a:hover {
   text-decoration: underline;
 }
+.contact-item pre {
+  white-space: pre-wrap;  /* Wraps long lines to fit the container */
+  word-wrap: break-word;  /* Breaks long words if necessary */
+  overflow-wrap: break-word;  /* Breaks lines at boundaries if needed */
+  font-size: 14px;  /* Adjust font size for readability if needed */
+  color: #eee;
+}
+
 
 /* Media Query for smaller screens */
 @media (max-width: 600px) {
@@ -58,7 +66,10 @@ h2 {
     max-width: 100%; /* Adjusted for full width on small screens */
     font-size: small;
   }
-
+  .contact-item pre {
+    font-size: 12px; /* Smaller font size on small screens */
+    padding: 10px;
+  }
   .contact-details {
     padding: 15px; /* Adjusted padding for better spacing on small screens */
   }
